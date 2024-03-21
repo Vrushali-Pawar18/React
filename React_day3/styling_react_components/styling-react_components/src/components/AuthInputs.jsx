@@ -1,4 +1,16 @@
 import { useState } from 'react';
+import {styled} from 'styled-components';
+import Button from './Button.jsx';
+import Input from './Input.jsx';
+
+const ControlContainer = styled.div`
+display: flex;
+flex-direction: column;
+gap: 0.5rem;
+margin-bottom: 1.5rem;
+`
+
+
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -22,31 +34,35 @@ export default function AuthInputs() {
 
   return (
     <div id="auth-inputs">
-      <div className="controls">
-        <p>
-          <label>Email</label>
-          <input
+      <ControlContainer>
+          <Input
+          label="Email"
+          invalid={emailNotValid}
             type="email"
-            className={emailNotValid ? 'invalid' : undefined}
+            // style={{
+            //   backgroundColor: emailNotValid ? 'pink' : 'white'
+            // }}
+            // className={emailNotValid ? 'invalid' : undefined}
             onChange={(event) => handleInputChange('email', event.target.value)}
           />
-        </p>
-        <p>
-          <label>Password</label>
-          <input
+          <Input
+           label="password"
+          invalid={passwordNotValid}
             type="password"
-            className={passwordNotValid ? 'invalid' : undefined}
+            // style={{
+            //   backgroundColor: emailNotValid ? 'pink' : 'white'
+            // }}
+            // className={passwordNotValid ? 'invalid' : undefined}
             onChange={(event) =>
               handleInputChange('password', event.target.value)
             }
           />
-        </p>
-      </div>
+      </ControlContainer>
       <div className="actions">
         <button type="button" className="text-button">
           Create a new account
         </button>
-        <button className='button' onClick={handleLogin}>Sign In</button>
+        <Button onClick={handleLogin}>Sign In</Button>
       </div>
     </div>
   );
