@@ -167,7 +167,7 @@ header h1 {
 .answer button:hover,
 .answer button:focus {
   /* background: linear-gradient(180deg, #bf48f6 0%, #9b50f2 100%); */
-  background: #9d5af5;
+  background: #c39df6;
   color: white;
   /* box-shadow: 0 0 4px 2px rgba(255, 200, 60, 0.8); */
 }
@@ -186,7 +186,7 @@ header h1 {
 
 .answer button.wrong {
   /* background: linear-gradient(180deg, #f96fb1 0%, #f52b8c 100%); */
-  background: #f55a98;
+  background: #e0075e;
   color: #2c203d;
 }
 
