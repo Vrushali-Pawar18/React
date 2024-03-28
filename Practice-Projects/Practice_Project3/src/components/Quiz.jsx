@@ -13,6 +13,7 @@ export default function Quiz() {
   const handleSelectAnswer = useCallback(function handleSelectAnswer(
     selectedAnswer
   ) {
+    
     setUserAnswers((prevUserAnswers) => {
       return [...prevUserAnswers, selectedAnswer];
     });
